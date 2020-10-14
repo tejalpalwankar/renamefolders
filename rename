@@ -1,0 +1,18 @@
+import os
+path = input("Enter the path of your directory")
+rfile = input("Enter the file name")
+img = input("Enter the extension")
+i=0
+for filename in os.listdir(path):
+    n_filename = filename.endswith(img)
+    if n_filename:
+        new_img = f"pic{i}.jpg"
+        i+=1
+        os.rename(filename, new_img)
+        continue
+    elif rfile in filename:
+        pass
+    else:
+        new_file_name = filename.capitalize()
+        os.rename(filename, new_file_name)
+        continue
